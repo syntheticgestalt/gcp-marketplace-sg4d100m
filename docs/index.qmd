@@ -24,7 +24,7 @@ enables accurate molecular property prediction and structural analysis across ph
 
 - **Model Architecture**: SE(3) invariant transformation followed by pre-trained transformers
 - **Training Data**: Trained on 100M+ molecules
-- **Input Format**: SMILES strings
+- **Input**: SMILES strings
 - **Output**: Molecular embeddings, list[float64]
 - **Integration**: Seamless integration with Google Cloud Vertex AI
 
