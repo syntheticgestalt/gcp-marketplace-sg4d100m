@@ -4,12 +4,11 @@
 # This also avoids warnings when adding an already-checked file with an ignored parent.
 !/**/
 # whitelist
-!/.github/**
 !/docs/**
 !/.envrc
 !/.gitattributes
 !/.gitignore
+!/default.nix
 !/justfile
 !/pixi.lock
 !/pixi.toml
-!/shell.nix

@@ -11,4 +11,4 @@ format:
     theme: materia
 
 execute:
-  freeze: true
+  freeze: auto
