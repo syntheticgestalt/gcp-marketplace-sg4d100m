@@ -1,23 +1,46 @@
 ---
-title: SG4D100M
+title: "SG4D100M: Advanced Molecular Foundation Model"
+subtitle: "Transform Drug Discovery with State-of-the-Art AI"
 ---
 
-## Product overview
+## Product Overview
 
-SG4D100M is a state-of-the-art molecular foundation model that revolutionizes drug discovery and chemical development. Built on advanced transformer architecture with SE(3) invariance, it enables accurate molecular property prediction and structural analysis across pharmaceutical, specialty chemical, and agricultural applications.
+SG4D100M is a state-of-the-art molecular foundation model that revolutionizes drug discovery and chemical development. Built on advanced transformer architecture with SE(3) invariance, it
+enables accurate molecular property prediction and structural analysis across pharmaceutical, specialty chemical, and agricultural applications.
 
-## Use cases
+## Key Benefits
 
-- *Molecular property prediction* - Predicting molecular properties such as solubility, pKa, and logP.
-- *Similarity search* - Finding similar molecules by comparing their embeddings
+- **SE(3) Invariance**: - Enantiomers are embedded into the different point of the embedding space
+- **Broad Applicability**: - From drug discovery to agricultural chemical development
+- **Scalable Solution**: - Process mass-scale molecules efficiently on Google Cloud
 
-## How to use
+## Use Cases
 
-0. Sign up for an account on GCP
-0. Subscribe to SG4D100M from Vertex AI Model Garden
-0. Transform your molecular data with SG4D100M (ref: [notebook: how-to-use.ipynb](notebooks/how-to-use.ipynb))
+- **Molecular Property Prediction**: Accurately predict critical properties like solubility, toxicity, and binding affinity
+- **Similarity Search**: Find structurally similar molecules with high precision using advanced embedding techniques
+- **Clustering**: Group molecules by structural and functional similarity for efficient compound screening
 
-## Sign up URLs
+## Technical Specifications
 
-- Google Cloud Platform: [https://cloud.google.com/]()
-- SG4D100M: [https://console.cloud.google.com/vertex-ai/publishers/syntheticgestalt/model-garden/sg4d100m]()
+- **Model Architecture**: SE(3) invariant transformation followed by pre-trained transformers
+- **Training Data**: Trained on 100M+ molecules
+- **Input Format**: SMILES strings
+- **Output**: Molecular embeddings, list[float64]
+- **Integration**: Seamless integration with Google Cloud Vertex AI
+
+## Getting Started
+
+SG4D100M will soon be available on [Model Garden on Vertex AI](https://cloud.google.com/model-garden).
+
+We are working on the integration with Vertex AI Model Garden.
+Once it's listed in the catalogue, you can follow these simple steps to begin using SG4D100M:
+
+1. Create your [Google Cloud Platform](https://cloud.google.com/) account
+2. Subscribe to [SG4D100M](https://console.cloud.google.com/vertex-ai/publishers/syntheticgestalt/model-garden/sg4d100m) from Vertex AI Model Garden
+3. Follow our comprehensive [getting started guide](notebooks/how-to-use.ipynb) to transform your molecular data
+
+## Support & Contact
+
+Ready to test your own set of molecules? Reach out to us!
+
+For more details, please contact us at [https://syntheticgestalt.com/contact](https://syntheticgestalt.com/contact)
