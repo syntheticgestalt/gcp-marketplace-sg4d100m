@@ -1,0 +1,23 @@
+---
+title: SG4D100M
+---
+
+## Product overview
+
+SG4D100M is a state-of-the-art molecular foundation model that revolutionizes drug discovery and chemical development. Built on advanced transformer architecture with SE(3) invariance, it enables accurate molecular property prediction and structural analysis across pharmaceutical, specialty chemical, and agricultural applications.
+
+## Use cases
+
+- *Molecular property prediction* - Predicting molecular properties such as solubility, pKa, and logP.
+- *Similarity search* - Finding similar molecules by comparing their embeddings
+
+## How to use
+
+0. Sign up for an account on GCP
+0. Subscribe to SG4D100M from Vertex AI Model Garden
+0. Transform your molecular data with SG4D100M (ref: [notebook: how-to-use.ipynb](notebooks/how-to-use.ipynb))
+
+## Sign up URLs
+
+- Google Cloud Platform: [https://cloud.google.com/]()
+- SG4D100M: [https://console.cloud.google.com/vertex-ai/publishers/syntheticgestalt/model-garden/sg4d100m]()

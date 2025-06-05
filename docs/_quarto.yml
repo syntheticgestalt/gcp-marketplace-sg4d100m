@@ -1,0 +1,14 @@
+project:
+  type: manuscript
+  preview:
+    port: 3000
+
+manuscript:
+  article: index.qmd
+
+format:
+  html:
+    theme: materia
+
+execute:
+  freeze: true
