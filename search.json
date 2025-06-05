@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SG4D100M",
+    "section": "",
+    "text": "SG4D100M is a state-of-the-art molecular foundation model that revolutionizes drug discovery and chemical development. Built on advanced transformer architecture with SE(3) invariance, it enables accurate molecular property prediction and structural analysis across pharmaceutical, specialty chemical, and agricultural applications."
+  },
+  {
+    "objectID": "index.html#product-overview",
+    "href": "index.html#product-overview",
+    "title": "SG4D100M",
+    "section": "",
+    "text": "SG4D100M is a state-of-the-art molecular foundation model that revolutionizes drug discovery and chemical development. Built on advanced transformer architecture with SE(3) invariance, it enables accurate molecular property prediction and structural analysis across pharmaceutical, specialty chemical, and agricultural applications."
+  },
+  {
+    "objectID": "index.html#use-cases",
+    "href": "index.html#use-cases",
+    "title": "SG4D100M",
+    "section": "Use cases",
+    "text": "Use cases\n\nMolecular property prediction - Predicting molecular properties such as solubility, pKa, and logP.\nSimilarity search - Finding similar molecules by comparing their embeddings"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "SG4D100M",
+    "section": "How to use",
+    "text": "How to use\n\nSign up for an account on GCP\nSubscribe to SG4D100M from Vertex AI Model Garden\nTransform your molecular data with SG4D100M (ref: notebook: how-to-use.ipynb)"
+  },
+  {
+    "objectID": "index.html#sign-up-urls",
+    "href": "index.html#sign-up-urls",
+    "title": "SG4D100M",
+    "section": "Sign up URLs",
+    "text": "Sign up URLs\n\nGoogle Cloud Platform: https://cloud.google.com/\nSG4D100M: https://console.cloud.google.com/vertex-ai/publishers/syntheticgestalt/model-garden/sg4d100m"
+  },
+  {
+    "objectID": "notebooks/how-to-use.html",
+    "href": "notebooks/how-to-use.html",
+    "title": "How to use SG4D100M",
+    "section": "",
+    "text": "coming soon."
+  }
+]
