@@ -5,6 +5,7 @@
 !/**/
 # whitelist
 !/docs/**
+!/.github/**
 !/.envrc
 !/.gitattributes
 !/.gitignore
