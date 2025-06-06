@@ -1,0 +1,104 @@
+---
+title: "How to use SG4D100M on Vertex AI"
+date: "2025-06-06"
+draft: true
+execute:
+  enabled: false
+output:
+  qmd:
+    toc: true
+    toc_depth: 2
+---
+
+## Note
+
+As of writing this document (June 6, 2025), the API interface of SG4D100M on Vertex AI is still under development. The following content is prepared before the release date and may differ in the final implementation.
+
+## Getting Started with SG4D100M
+
+### Objective
+
+This notebook demonstrates how to use the **Vertex AI API** to interact with SG4D100M for molecular embedding generation.
+
+## Setting up
+
+First, let's set up the required configuration:
+
+- `API_ENDPOINT`: The URL endpoint for sending your requests
+- `ACCESS_TOKEN`: The bearer token for authenticating your HTTP requests
+
+```{python}
+import subprocess
+
+# Replace these with your actual project details
+PROJECT_NAME = "__YOUR_PROJECT_NAME_GOES_HERE__"
+PROJECT_LOCATION = "__YOUR_PROJECT_LOCATION_GOES_HERE__"
+
+# Construct the API endpoint URL
+API_ENDPOINT = '/'.join([
+    f"https://{PROJECT_LOCATION}-aiplatform.googleapis.com/v1",
+    f"/projects/{PROJECT_NAME}",
+    f"/locations/{PROJECT_LOCATION}/",
+    "publishers/syntheticgestalt",
+    "models/sg4d100m:rawPredict",
+])
+
+# Get the access token using gcloud CLI
+result = subprocess.run(
+    args=["gcloud", 'auth', 'print-access-token'],
+    capture_output=True,
+)
+ACCESS_TOKEN = result.stdout.decode('utf-8').strip()
+```
+
+## Running Online Inference
+
+### Model Input
+
+Let's create embeddings for the following compounds:
+
+```{python}
+import polars as pl
+
+# Example molecules (caffeine and a Theanine)
+request_df = pl.DataFrame([
+    {"smiles": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"},  # Caffeine
+    {"smiles": "CCNC(=O)CC[C@H](N)C(=O)O"},      # Theanine
+])
+request_df
+```
+
+### API Invocation
+
+We can run the predictions using HTTP POST requests:
+
+```{python}
+import requests
+
+response = requests.post(
+    url=API_ENDPOINT,
+    headers={
+        "Authorization": f"Bearer {ACCESS_TOKEN}",
+        "Content-Type": "application/json",
+    },
+    json={
+        "sg4d100m_version": "sg4d100m-2025-06-06",
+        "messages": request_df.to_dicts(),
+    },
+)
+```
+
+### Model Output
+
+The model returns molecular embeddings that can be converted to a DataFrame:
+
+```{python}
+response_df = pl.from_dicts(response.json())
+response_df
+```
+
+## Next Steps
+
+- Use the embeddings for similarity search
+- Perform clustering analysis
+- Predict molecular properties
