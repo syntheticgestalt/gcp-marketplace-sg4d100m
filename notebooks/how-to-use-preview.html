@@ -19,6 +19,41 @@
         margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
         vertical-align: middle;
       }
+      /* CSS for syntax highlighting */
+      html { -webkit-text-size-adjust: 100%; }
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+        }
+      pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+      div.sourceCode
+        {   }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
     </style>
 
     <style>
@@ -71,7 +106,7 @@
       }      
     </style>
 
-    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script>
     window.document.addEventListener("DOMContentLoaded", function () {
 
       var header = window.document.querySelector("#quarto-embed-header");
@@ -122,15 +157,17 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d9c02326b6b88cc0c1a0c0b69f9cb36a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-     
+<link href="../site_libs/bootstrap/bootstrap-15e5435310d91b04090bf6cd34eeaf0c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>  
       </head>
 
   <body class="quarto-notebook quarto-light">
     <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
       
       <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
-      <h6><i class="bi bi-journal-code"></i> Overview</h6>
+      <h6><i class="bi bi-journal-code"></i> Getting Started with SG4D100M</h6>
 
             <a href="../notebooks/how-to-use.ipynb" class="btn btn-primary quarto-download-embed" download="how-to-use.ipynb">Download Notebook</a>
           </div>
@@ -141,19 +178,157 @@
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#getting-started-with-sg4d100m" id="toc-getting-started-with-sg4d100m" class="nav-link active" data-scroll-target="#getting-started-with-sg4d100m">Getting Started with SG4D100M</a></li>
+  <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up">Setting up</a></li>
+  <li><a href="#running-online-inference" id="toc-running-online-inference" class="nav-link" data-scroll-target="#running-online-inference">Running Online Inference</a></li>
+  <li><a href="#model-input" id="toc-model-input" class="nav-link" data-scroll-target="#model-input">Model Input</a></li>
+  <li><a href="#api-invocation" id="toc-api-invocation" class="nav-link" data-scroll-target="#api-invocation">API Invocation</a></li>
+  <li><a href="#model-output" id="toc-model-output" class="nav-link" data-scroll-target="#model-output">Model Output</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
   </ul>
 </nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content">      <div id="cell-0" class="cell markdown">
-<p>coming soon.</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">      <div id="cell-1" class="cell markdown">
+<hr>
+<p>As of writing this document (June 6, 2025), the API interface of SG4D100M on Vertex AI is still under development. The following content is prepared before the release date and may differ in the final implementation.</p>
+<hr>
 </div>
-<div id="cell-1" class="cell markdown">
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>In this notebook, we will</p>
+<div id="cell-2" class="cell markdown">
+<section id="getting-started-with-sg4d100m" class="level1">
+<h1>Getting Started with SG4D100M</h1>
+</section>
+</div>
+<div id="cell-3" class="cell markdown">
+<section id="objective" class="level2">
+<h2 class="anchored" data-anchor-id="objective">Objective</h2>
+<p>This notebook demonstrates how to use the <strong>Vertex AI API</strong> to interact with SG4D100M for molecular embedding generation.</p>
+</section>
+</div>
+<div id="cell-4" class="cell markdown">
+<section id="setting-up" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up">Setting up</h2>
+<p>First, let’s set up the required configuration:</p>
+<ul>
+<li><code>API_ENDPOINT</code>: The URL endpoint for sending your requests</li>
+<li><code>ACCESS_TOKEN</code>: The bearer token for authenticating your HTTP requests</li>
+</ul>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="cell-5" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace these with your actual project details</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>PROJECT_NAME <span class="op">=</span> <span class="st">"__YOUR_PROJECT_NAME_GOES_HERE__"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>PROJECT_LOCATION <span class="op">=</span> <span class="st">"__YOUR_PROJECT_LOCATION_GOES_HERE__"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Construct the API endpoint URL</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>API_ENDPOINT <span class="op">=</span> <span class="st">'/'</span>.join([</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"https://</span><span class="sc">{</span>PROJECT_LOCATION<span class="sc">}</span><span class="ss">-aiplatform.googleapis.com/v1"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"/projects/</span><span class="sc">{</span>PROJECT_NAME<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"/locations/</span><span class="sc">{</span>PROJECT_LOCATION<span class="sc">}</span><span class="ss">/"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"publishers/syntheticgestalt"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"models/sg4d100m:rawPredict"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the access token using gcloud CLI</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> subprocess.run(</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    args<span class="op">=</span>[<span class="st">"gcloud"</span>, <span class="st">'auth'</span>, <span class="st">'print-access-token'</span>],</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    capture_output<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>ACCESS_TOKEN <span class="op">=</span> result.stdout.decode(<span class="st">'utf-8'</span>).strip()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div id="cell-6" class="cell markdown">
+<section id="running-online-inference" class="level2">
+<h2 class="anchored" data-anchor-id="running-online-inference">Running Online Inference</h2>
+</section>
+</div>
+<div id="cell-7" class="cell markdown">
+<section id="model-input" class="level3">
+<h3 class="anchored" data-anchor-id="model-input">Model Input</h3>
+<p>Let’s create embeddings for the following compounds:</p>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div id="cell-8" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example molecules (caffeine and a Theanine)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>request_df <span class="op">=</span> pl.DataFrame([</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"smiles"</span>: <span class="st">"CN1C=NC2=C1C(=O)N(C(=O)N2C)C"</span>},  <span class="co"># Caffeine</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"smiles"</span>: <span class="st">"CCNC(=O)CC[C@H](N)C(=O)O"</span>},      <span class="co"># Theanine</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>request_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (2, 1)</small>
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">smiles</th>
+</tr>
+<tr class="even">
+<th>str</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>"CN1C=NC2=C1C(=O)N(C(=O)N2C)C"</td>
+</tr>
+<tr class="even">
+<td>"CCNC(=O)CC[C@H](N)C(=O)O"</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
+<div id="cell-9" class="cell markdown">
+<section id="api-invocation" class="level3">
+<h3 class="anchored" data-anchor-id="api-invocation">API Invocation</h3>
+<p>We can run the predictions using HTTP POST requests:</p>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="cell-10" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.post(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    url<span class="op">=</span>API_ENDPOINT,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    headers<span class="op">=</span>{</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Authorization"</span>: <span class="ss">f"Bearer </span><span class="sc">{</span>ACCESS_TOKEN<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Content-Type"</span>: <span class="st">"application/json"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    json<span class="op">=</span>{</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"sg4d100m_version"</span>: <span class="st">"sg4d100m-2025-06-06"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"messages"</span>: request_df.to_dicts(),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div id="cell-11" class="cell markdown">
+<section id="model-output" class="level3">
+<h3 class="anchored" data-anchor-id="model-output">Model Output</h3>
+<p>The model returns molecular embeddings that can be converted to a DataFrame:</p>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [9]:</pre></div><div id="cell-12" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>response_df <span class="op">=</span> pl.from_dicts(response.json())</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>response_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div>
+<div id="cell-13" class="cell markdown">
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<ul>
+<li>Use the embeddings for similarity search</li>
+<li>Perform clustering analysis</li>
+<li>Predict molecular properties</li>
+</ul>
 </section>
 </div>
      </main>
